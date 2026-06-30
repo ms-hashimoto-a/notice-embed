@@ -2,32 +2,48 @@
   ============================================================
   育業調査アンケート お知らせ本文ファイル（notice-fragment.html）
   ============================================================
-  ■ このファイルの役割
-    アンケート画面の先頭に出る「お知らせ枠」の "中身" です。
-    不具合などで何か出したいときだけ、このコメントより下に文面を書きます。
-    平常時（お知らせ無し）は下を空のままにしておけば、枠ごと自動で非表示になります。
+  ■ 役割
+    アンケート冒頭に出る「お知らせ枠」の "中身" です。お詫びに限らず、
+    締切リマインド・メンテ予告・各種ご案内など、何でも表示できます。
+    このコメントの「下」に文面を書くと表示、空にすると非表示（枠ごと消える）。
 
-  ■ 出したいとき（不具合発生時）
-    下の【テンプレート】を、この大きなコメントの「外（下）」にコピペし、文面を直して保存。
-    → 数分以内にアンケート画面に表示されます。
+  ■ 表示する：下の【テンプレート】から1つを選び、この大きなコメントの外（下）へ
+    コピペして文面を編集 → 保存（GitHub web なら Commit）。数分で反映。
+  ■ 消す：貼り付けた <div>...</div> を削除して保存（＝再び空に）。
 
-  ■ 消したいとき（復旧後）
-    コピペした <div>...</div> を削除して保存（＝再び空に）。
-    → 数分以内に画面から消えます。
+  ■ 注意：このファイルは一般公開サーバ(GitHub Pages)に置かれます。
+    クライアント名・個人名・未公表数値・内部資料は書かない（回答者全員に見える前提）。
 
-  ■ ぜったいの注意
-    このファイルは一般公開サーバ（GitHub Pages 等）に置きます。
-    クライアント名・個人名・未公表の数値・内部資料の内容は書かないこと。
-    回答者全員に見える前提の、公開して差し支えない文面だけを書く。
-
-  ■ 文面テンプレート（このブロックをコメントの外＝下にコピーして編集）
+  ============================================================
+  【テンプレート】使いたいものを下にコピーして文面を直す（4タイプ）
+  ※ タイトル行の絵文字や文言は自由に変更可。
   ------------------------------------------------------------
+
+  ◆ お知らせ（青／一般のご案内）
+  <div style="border:1px solid #2f6fb3;background:#eaf3fb;color:#163a5c;border-radius:8px;padding:14px 16px;margin:0 0 16px;font-size:14px;line-height:1.8;font-family:'Hiragino Kaku Gothic ProN',Meiryo,sans-serif;">
+    <div style="font-weight:bold;font-size:15px;margin-bottom:6px;color:#1c4a76;">&#8505; お知らせ</div>
+    <p style="margin:0;">ここにお知らせ本文を書きます。</p>
+  </div>
+
+  ◆ 重要なお知らせ（赤／強調）
+  <div style="border:1px solid #d9534f;background:#fdecea;color:#611a15;border-radius:8px;padding:14px 16px;margin:0 0 16px;font-size:14px;line-height:1.8;font-family:'Hiragino Kaku Gothic ProN',Meiryo,sans-serif;">
+    <div style="font-weight:bold;font-size:15px;margin-bottom:6px;">&#9888; 重要なお知らせ</div>
+    <p style="margin:0;">ここに重要な連絡を書きます（例：回答期限の変更など）。</p>
+  </div>
+
+  ◆ 注意・リマインド（黄）
+  <div style="border:1px solid #d9a300;background:#fff7e0;color:#5c4600;border-radius:8px;padding:14px 16px;margin:0 0 16px;font-size:14px;line-height:1.8;font-family:'Hiragino Kaku Gothic ProN',Meiryo,sans-serif;">
+    <div style="font-weight:bold;font-size:15px;margin-bottom:6px;color:#7a5b00;">&#9888; ご注意</div>
+    <p style="margin:0;">ここに注意・リマインドを書きます（例：回答締切は○月○日です）。</p>
+  </div>
+
+  ◆ お詫び（赤／不具合対応）
   <div style="border:1px solid #d9534f;background:#fdecea;color:#611a15;border-radius:8px;padding:14px 16px;margin:0 0 16px;font-size:14px;line-height:1.8;font-family:'Hiragino Kaku Gothic ProN',Meiryo,sans-serif;">
     <div style="font-weight:bold;font-size:15px;margin-bottom:6px;">&#9888; システム不具合に関するお詫びとご案内</div>
     <p style="margin:0 0 8px;">&#9679;月&#9679;日&#9679;時頃、一部の設問で先へ進めない不具合が発生しておりました。現在は復旧しております。ご迷惑をおかけし申し訳ございません。</p>
-    <p style="margin:0;">画面が進まない場合は、お手数ですがページの再読み込みをお試しください。ご不明な点は事務局（TEL 03-6823-6487／平日10-17時、Mail ikugyo-chosa@mindshare.co.jp）までお問い合わせください。</p>
+    <p style="margin:0;">画面が進まない場合はページの再読み込みをお試しください。ご不明点は事務局（TEL 03-6823-6487／平日10-17時、Mail ikugyo-chosa@mindshare.co.jp）まで。</p>
   </div>
   ------------------------------------------------------------
 -->
 
-<!-- ▼ お知らせ本文はこの行の下に書く（平常時は空のまま） ▼ -->
+<!-- ▼ お知らせ本文はこの行の下に書く（平常時は空のまま。上のテンプレからコピー） ▼ -->
