@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>お知らせ</title>
+<style>
+  html, body { margin: 0; padding: 0; background: transparent; }
+</style>
+</head>
+<body>
+<div id="content"></div>
+<script>
+  // notice-fragment.html を読み込み、中身があるときだけ表示する。
+  // 親（アンケート画面）へ高さを通知し、iframe をピッタリにする（空なら高さ0＝消える）。
+  (function () {
+    var SRC = "notice-fragment.html?t=" + (new Date().getTime()); // キャッシュ回避
+    function reportHeight() {
+      var h = document.body.scrollHeight;
+      try { parent.postMessage({ ikugyoNoticeHeight: h }, "*"); } catch (e) {}
+    }
+    fetch(SRC, { cache: "no-store" })
+      .then(function (r) { return r.ok ? r.text() : ""; })
+      .then(function (html) {
+        // HTMLコメントを除いて中身があるか判定（平常時はコメントだけ＝空）
+        var visible = (html || "").replace(/<!--[\s\S]*?-->/g, "").trim();
+        if (visible) { document.getElementById("content").innerHTML = html; }
+        reportHeight();
+      })
+      .catch(function () { reportHeight(); });
+    window.addEventListener("load", reportHeight);
+  })();
+</script>
+</body>
+</html>

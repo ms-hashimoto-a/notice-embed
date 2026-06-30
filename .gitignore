@@ -1,0 +1,6 @@
+# 公開リポジトリ(GitHub Pages)には、配信に必要な2ファイルだけを載せる。
+# README・スニペット・ガイド等は手元のみ（公開しない）。
+*
+!.gitignore
+!notice-fragment.html
+!notice-page.html
